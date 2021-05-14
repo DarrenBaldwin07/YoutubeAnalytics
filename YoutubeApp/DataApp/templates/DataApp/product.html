@@ -1,0 +1,29 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Product</title>
+    <link rel="stylesheet" href="{% static '/css/product.css' %}">
+</head>
+<body>
+    <header>
+        <li><img class='prof-pic' src="{{Image}}", width="88" height="88"></li>
+        <li> <h1>{{Channel}}</h1> </li>
+        <li><form class='sub-form' action="/apiData/", method='post'>
+            {% csrf_token %}
+            <input class='username_inp' type="text", name='stats', placeholder='Channel ID'>
+            <input class='id-btn'type="submit", value='Search'>
+        </form></li>
+    </header>
+
+    <h1>Statistics</h1>
+    <div class='stats_view'>
+        <h2 class='data'>{{Data}}</h1>
+        <h2 class='data'>{{Data2}}</h1>
+        <h2 class='data'>{{Data3}}</h1>
+    </div>
+    
+    
+</body>
+</html>

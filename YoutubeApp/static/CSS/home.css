@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap");
+
+body { 
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins';
+}
+
+a {
+    text-decoration: none;
+}
+
+
+.banner-area {
+    width: 100%;
+    height: 140vh;
+    background: url("/static/images/YoutubeImg.jpg");
+    background-size: cover;
+    text-align: center;
+}
+
+
+.cover_head2 {
+    font-size: 6vh;
+    text-align: center;
+}
+
+.start-btn {
+    background: #ff4d4d;
+    color: white;
+    width: 150px;
+    padding: 10px;
+    border-color: none;
+    border: none;
+    border-radius: 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.main_head2 {
+    text-align: center;
+}
+
+
+.banner-area2 {
+    width: 100%;
+    height: 80vh;
+    background: url("/static/images/GetStartedBg.jpg");
+    background-size: cover;
+}
+
+
+.content-main {
+    padding-top: 100px;
+}
+
+.content-main2 {
+    padding-top: 100px;
+}
+.navbar {
+    background: #FFAFAA;
+    padding: 1.2em;
+    display: flex;
+}
+
+.container {
+    display: flex;
+    place-content: space-between;
+    font-family: 'Poppins';
+    
+}
+
+.container a {
+    text-decoration: none;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px;
+    display: inline-block;
+}
+
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.navbar li {
+    display: inline-block;
+}
+
+
+
+.main_head {
+
+    position: absolute;
+    width: 500px;
+    height: 80px;
+    left: 81px;
+    top: 204px;
+    text-align: left;
+
+
+    font-style: normal;
+    font-weight: 200;
+    font-size: 24px;
+    line-height: 60px;
+    
+}
+
+
+.sub-head {
+    font-family: Arial;
+    font-weight: lighter;
+    color: #CCCCCC;
+}
+
+
+a:hover {
+    font-size: 150%;
+}
+
+input:hover {
+    cursor: pointer;
+}
