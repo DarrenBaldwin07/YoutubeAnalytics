@@ -1,28 +1,63 @@
-{% load static %}
 
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <title>Product</title>
-    <link rel="stylesheet" href="{% static '/css/product.css' %}">
+    <link rel="stylesheet" href="{% static '/CSS/product.css'%}">
 </head>
 <body>
-    <header>
-        <li><img class='prof-pic' src="{{Image}}", width="88" height="88"></li>
-        <li> <h1>{{Channel}}</h1> </li>
-        <li><form class='sub-form' action="/apiData/", method='post'>
-            {% csrf_token %}
-            <input class='username_inp' type="text", name='stats', placeholder='Channel ID'>
-            <input class='id-btn'type="submit", value='Search'>
-        </form></li>
+    <header class="header">
+        <div>
+            <li><img class='prof-pic' src="{{Image}}", width="88" height="88"></li>
+            <li> <h1>{{Channel}}</h1> </li>
+            <li><form class='sub-form' action="/apiData/", method='post'>
+                {% csrf_token %}
+                <input class='username_inp' type="text", name='stats', placeholder='Channel ID'>
+                <input class='id-btn'type="submit", value='Search'>
+            </form></li>
+        </div>
+
+        <div class="url-btn">
+            <a class="chan-url" href="{{Url}}">Visit Channel</a>
+        </div>
     </header>
 
-    <h1>Statistics</h1>
-    <div class='stats_view'>
-        <h2 class='data'>{{Data}}</h1>
-        <h2 class='data'>{{Data2}}</h1>
-        <h2 class='data'>{{Data3}}</h1>
-    </div>
+    
+    <section>
+        <div class='container'>
+            <div class="content-view">
+                <h1 class="stats" >Statistics</h1>
+                <div class='stats_view'>
+                    <h2 class='data'>{{Data}}</h2>
+                    <h2 class='data'>{{Data2}}</h2>
+                    <h2 class='data'>{{Data3}}</h2>
+    
+                                   
+                </div>
+    
+                <h1 class="about" >About</h1>
+    
+                <div class="about-view">
+                    <div class="img-row">
+                        <img class='prof-pic' src="{{Image}}", width="88" height="88">
+                        <h1 >Description</h1>
+                        <h2>{{Description}}</h2>
+                        <div class="location">
+                            <h1>Location</h1>
+                            <h2>{{Location}}</h2>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+        </div>
+    </section>
+    
+    
+    
     
     
 </body>
