@@ -17,10 +17,14 @@ def product(request):
 
     Image_url = "https://i.pinimg.com/originals/7d/c9/93/7dc993c70d4adba215b87cafdc59d82d.png"
     Description = "------"
+    Location = "------"
+    Data = "Begin by searching for a channel using the field above!"
 
     context = {
         "Image": Image_url,
         "Description": Description,
+        "Data": Data,
+        "Location": Location,
     }
 
     return render(request, 'DataApp/product.html', context)
@@ -58,6 +62,8 @@ def apiData(request):
 
     
 
+    
+
     try:
         response = request1.execute()
         response2 = request2.execute()
@@ -66,7 +72,7 @@ def apiData(request):
         Data2 = f"Total Views: {response['items'][0].get('statistics').get('viewCount')}"
         Data3 = f"Total Videos:  {response['items'][0].get('statistics').get('videoCount')}"
         Description = f"{response2['items'][0].get('snippet').get('description')}"
-        Location =f"{response2['items'][0].get('snippet').get('country')}"
+        Location = f"{response2['items'][0].get('snippet').get('country')}"
         Image_url = f"{response2['items'][0].get('snippet').get('thumbnails').get('default').get('url')}"
         Channel = f"{response2['items'][0].get('snippet').get('title')}"
         Url = "https://www.youtube.com/channel/{}".format(request.POST['stats'])
