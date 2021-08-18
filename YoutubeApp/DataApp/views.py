@@ -19,12 +19,16 @@ def product(request):
     Description = "------"
     Location = "------"
     Data = "Begin by searching for a channel using the field above!"
+    has_searched = True
+   
 
     context = {
         "Image": Image_url,
         "Description": Description,
         "Data": Data,
         "Location": Location,
+        "has_searched": has_searched,
+        
     }
 
     return render(request, 'DataApp/product.html', context)
@@ -35,6 +39,7 @@ def apiData(request):
 
     api_key = 'AIzaSyC7R7jYq97okNNfWGfbhWWmK8fXZ1D-eig'
     youtube = build('youtube','v3', developerKey=api_key)
+    has_searched = False
     
     # Api Requests
     request1 = youtube.channels().list(
@@ -56,8 +61,6 @@ def apiData(request):
     request4 = youtube.channels().list(
         part='contentOwnerDetails',
         id="{}".format(request.POST['stats'])
-        
-        
     )
 
     
@@ -76,7 +79,7 @@ def apiData(request):
         Image_url = f"{response2['items'][0].get('snippet').get('thumbnails').get('default').get('url')}"
         Channel = f"{response2['items'][0].get('snippet').get('title')}"
         Url = "https://www.youtube.com/channel/{}".format(request.POST['stats'])
-
+        Result = [2]
         print(Description)
         
     except Exception:
@@ -109,6 +112,8 @@ def apiData(request):
         "Url": Url,
         "Description": Description,
         "Location": Location,
+        "Result": Result,
+        
     }
 
     return render(request, 'DataApp/product.html', context)

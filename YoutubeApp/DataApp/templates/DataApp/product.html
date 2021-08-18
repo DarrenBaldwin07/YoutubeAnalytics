@@ -27,36 +27,49 @@
     <section>
         <div class='container'>
             <div class="content-view" id="content-view">
-                <h1 class="stats" >Statistics</h1>
-                <div class='stats_view'>
-                    <h2 class='data'>{{Data}}</h2>
-                    <h2 class='data'>{{Data2}}</h2>
-                    <h2 class='data'>{{Data3}}</h2>
-    
-                                   
+
+                {% if has_searched %}
+                <div class="cover-area">
+                    <h1>Begin by searching for a channel using the field above!</h1>
+                    <h2>Sample ID: UCBR8-60-B28hp2BmDPdntcQ</h2>
                 </div>
-    
-                <h1 class="about" >About</h1>
-    
-                <div class="about-view">
-                    <div class="img-row">
-                        <img class='prof-pic' src="{{Image}}", width="88" height="88">
-                        <h1 >Description</h1>
-                        <h2>{{Description}}</h2>
-                        <div class="location">
-                            <h1>Location</h1>
-                            <h2>{{Location}}</h2>
-                        </div>
-                        
-                    </div>
                     
-                </div>
+                {% endif %}
+                
+
+                {% for i in Result %}
+                    <h1 class="stats" >Statistics</h1>
+                    <div class='stats_view'>
+                        <h2 class='data'>{{Data}}</h2>
+                        <h2 class='data'>{{Data2}}</h2>
+                        <h2 class='data'>{{Data3}}</h2>
+                    </div>
+                {% endfor %}
+    
+                
+                {% for i in Result %}
+                    <h1 class="about" >About</h1>
+                    <div class="about-view">
+                        <div class="img-row">
+                            <img class='prof-pic' src="{{Image}}", width="88" height="88">
+                            <h1 >Description</h1>
+                            <h2>{{Description}}</h2>
+                            <div class="location">
+                                <h1>Location</h1>
+                                <h2>{{Location}}</h2>
+                            </div>
+                        
+                        </div>
+                    </div>
+                {% endfor %}
             </div>
             
         </div>
     </section>
     
     
-
+    
+  
+    
 </body>
 </html>

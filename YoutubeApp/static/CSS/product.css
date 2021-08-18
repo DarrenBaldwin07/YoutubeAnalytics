@@ -173,6 +173,27 @@ li, a {
   font-size: 1.2em;
 }
 
+.cover-area {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  max-width: 500px;
+  margin: 20px;
+}
+
+.cover-area h2 {
+  font-size: .8em;
+  background-color: #ff4d4d;
+  padding: 1.5em;
+  border-radius: 1em;
+  width: 350px;
+  color: white;
+  margin: 1em;
+}
+
+
+
 
 @media only screen and (max-width: 900px) {
   .header {
@@ -205,5 +226,14 @@ li, a {
 
   .location h2 {
     font-size: 1.2em;
+  }
+
+  .cover-area {
+    font-size: .8em;
+    width: 300px;
+  }
+
+  .cover-area h2 {
+    width: 300px;
   }
 }

@@ -189,12 +189,23 @@ li {
 }
 
 .footer {
+    display: flex;
     background-color: #FC6D4E;
+    min-height: 125px;
+    align-items: center;
 }
 
 .cont-row {
-    
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
+
+.cont-row a {
+    margin: .5em;
+}
+
 
 
 @media only screen and (max-width: 1500px) {
