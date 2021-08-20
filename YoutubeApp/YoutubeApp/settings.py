@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-1k_ezgnbl)-!lh^*ir*zbtk^9=!=q0=9yw0la+6!9hnq^-tg&b
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["https://youtubeanalytics33.herokuapp.com/"]
+ALLOWED_HOSTS = ["https://youtubeanalytics33.herokuapp.com"]
 
 
 # Application definition
