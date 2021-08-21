@@ -20,6 +20,7 @@ def product(request):
     Location = "------"
     Data = "Begin by searching for a channel using the field above!"
     has_searched = True
+    cover_text = ""
    
 
     context = {
@@ -28,6 +29,8 @@ def product(request):
         "Data": Data,
         "Location": Location,
         "has_searched": has_searched,
+        "cover_text": cover_text,
+        
         
     }
 
@@ -37,9 +40,12 @@ def product(request):
 
 def apiData(request):
 
+    Result = []
+    cover_text = ""
+
     api_key = 'AIzaSyC7R7jYq97okNNfWGfbhWWmK8fXZ1D-eig'
     youtube = build('youtube','v3', developerKey=api_key)
-    has_searched = False
+    
     
     # Api Requests
     request1 = youtube.channels().list(
@@ -83,6 +89,7 @@ def apiData(request):
         print(Description)
         
     except Exception:
+        cover_text = "The Channel ID that you submitted is not valid."
         Url =""
         Data = "The Channel ID that you submitted is not valid."
         Data2 = ""
@@ -113,7 +120,7 @@ def apiData(request):
         "Description": Description,
         "Location": Location,
         "Result": Result,
-        
+        "cover_text": cover_text
     }
 
     return render(request, 'DataApp/product.html', context)
