@@ -1,1 +1,1 @@
-web: gunicorn YoutubeApp.wsgi
+web: gunicorn YoutubeApp.wsgi:application --log-file -
